@@ -1,0 +1,2 @@
+# Container initialization must retain Unix line endings on Windows checkouts.
+dev/postgres/*.sh text eol=lf

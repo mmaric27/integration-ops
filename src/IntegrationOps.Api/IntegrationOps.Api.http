@@ -1,0 +1,24 @@
+@IntegrationOps.Api_HostAddress = https://localhost:7004
+
+### Process liveness
+GET {{IntegrationOps.Api_HostAddress}}/health
+Accept: text/plain
+
+### List run snapshots
+GET {{IntegrationOps.Api_HostAddress}}/api/integration-runs
+Accept: application/json
+
+### Database readiness
+GET {{IntegrationOps.Api_HostAddress}}/health/ready
+Accept: text/plain
+
+### Explicit synthetic intake: reuse this key/body for a replay, change the key for a new run.
+POST {{IntegrationOps.Api_HostAddress}}/api/integration-runs
+Content-Type: application/json
+Idempotency-Key: synthetic-example-0001
+
+{"partner":"Synthetic Intake Example","operation":"Example import"}
+
+### Use the Location returned by POST for the actual generated ID.
+GET {{IntegrationOps.Api_HostAddress}}/api/integration-runs/00000000-0000-0000-0000-000000000000
+Accept: application/json

@@ -1,0 +1,38 @@
+:root {
+  --canvas: #eeefe9;
+  --surface: #f8f8f4;
+  --ink: #172019;
+  --ink-soft: #364038;
+  --muted: #596359;
+  --line: #dfe1d9;
+  --line-strong: #c9cec5;
+  --signal: #5d6f2f;
+  --success: #2b6649;
+  --success-soft: #e2efe8;
+  --warning: #79500f;
+  --warning-soft: #f4ead4;
+  --danger: #a44337;
+  --danger-soft: #f3e2de;
+  --sans: Inter, Aptos, 'Segoe UI', sans-serif;
+  --display: Georgia, 'Times New Roman', serif;
+  --mono: 'Cascadia Code', Consolas, monospace;
+
+  color: var(--ink-soft);
+  background: var(--canvas);
+  font-family: var(--sans);
+  font-synthesis: none;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}

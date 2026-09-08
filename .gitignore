@@ -1,0 +1,33 @@
+# .NET
+**/bin/
+**/obj/
+TestResults/
+coverage/
+*.user
+*.suo
+
+# Node and Vite
+**/node_modules/
+**/dist/
+**/.vite/
+*.tsbuildinfo
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.key
+*.pem
+
+# IDE and operating system files
+.vs/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
