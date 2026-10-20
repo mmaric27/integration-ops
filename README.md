@@ -194,6 +194,8 @@ Unset `Processing__Enabled` rather than setting it to false: verification includ
 
 The script runs locked restore, warning-as-error build, backend tests, formatting, EF model-drift checks, dependency audits, frontend lint/tests and a production UI build. Docker is required; database tests fail rather than silently skip when it is unavailable.
 
+The [CI workflow](.github/workflows/ci.yml) runs the same script on pushes to `main`, pull requests targeting `main` and manual dispatch. It uses an Ubuntu runner with Docker and disposable PostgreSQL containers managed by Testcontainers. Results and logs are available in the repository's [Actions tab](https://github.com/mmaric27/integration-ops/actions).
+
 Backend tests use `WebApplicationFactory` and real PostgreSQL through Testcontainers, with a migrated database per test. They cover concurrent intake, constraints, migrations, lease allocation, stale completion, retries, cancellation and recovery. They do not use or reset the interactive development database. Frontend tests use Vitest, jsdom and mocked HTTP responses to cover rendering and runtime payload validation; real-browser checks remain separate.
 
 NuGet auditing includes direct and transitive dependencies and blocks on any reported vulnerability. npm auditing includes development dependencies and blocks on moderate or higher findings; low findings still require review. Failed or unavailable audits are not clean results.
