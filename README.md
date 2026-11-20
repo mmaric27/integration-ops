@@ -2,6 +2,8 @@
 
 Integration Ops is a reference implementation of idempotent request intake and durable background processing, built with .NET 10, PostgreSQL and React.
 
+![Integration Ops: reliable data intake and background processing](docs/images/feature.png)
+
 An API accepts integration runs, a hosted worker processes them, and an operator view displays their current state. Synthetic operations make success, retry, failure and restart recovery reproducible without connecting to external systems. All sample data is fictional.
 
 ## Architecture
